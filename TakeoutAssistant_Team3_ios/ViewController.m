@@ -10,7 +10,9 @@
 
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
+@property (nonatomic, strong) NSArray *array;
 @end
 
 @implementation ViewController
@@ -155,6 +157,46 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     // Finally, add the recognition operation to the queue
     [self.operationQueue addOperation:operation];
+}
+
+#pragma mark Table View Data Source Mehtods
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    // Returns the number of rows for the table view using the array instance variable.
+    
+    return self.array.count;
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Creates each cell for the table view.
+    
+    static NSString *cellID =  @"CELLID" ;
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellID];
+    
+    if (cell == nil) {
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        
+    }
+    
+    // Creates an NSDictionary that holds the user's posts and then loads the data into each cell of the table view.
+    
+    cell.textLabel.text = self.array[indexPath.row][@"text"];
+    
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // When a user selects a row this will deselect the row.
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
 
 @end
