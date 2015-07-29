@@ -5,6 +5,24 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="sqZ-5C-0ea">
+            <objects>
+                <viewController id="13e-nN-hcC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R6s-b9-yOS"/>
+                        <viewControllerLayoutGuide type="bottom" id="68S-qV-y5z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Xt-l5-Ddc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9t-pC-BBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="-462"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -33,6 +51,10 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="goA-xO-jou" secondAttribute="centerX" constant="-6" id="EgE-yG-PMK"/>
+                            <constraint firstAttribute="centerX" secondItem="REb-TR-4Be" secondAttribute="centerX" constant="-0.5" id="TPg-QV-wuq"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="qT0-9z-FLs" id="5Ci-mP-tsK"/>
