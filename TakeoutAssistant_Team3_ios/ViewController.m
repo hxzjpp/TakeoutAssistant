@@ -11,79 +11,19 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
+
+
 @end
 
 @implementation ViewController
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
-    UIImage* buttonImg =[UIImage imageNamed:@"greenplus_plus.jpg"];
-    [_chooseButton setImage: buttonImg forState:UIControlStateNormal];
-    
-    
+    // Create a queue to perform recognition operations
+    self.operationQueue = [[NSOperationQueue alloc] init];
 }
-
-- (void)progressImageRecognitionForTesseract:(G8Tesseract *)tesseract {
-    NSLog(@"progress: %lu", (unsigned long)tesseract.progress);
-}
-
-
-
-- (BOOL)shouldCancelImageRecognitionForTesseract:(G8Tesseract *)tesseract {
-    return NO;  // return YES, if you need to interrupt tesseract before it finishes
-}
-
-
-
-
-- (IBAction)AddNew:(id)sender {
-    mediaPicker = [[UIImagePickerController alloc] init];
-    [mediaPicker setDelegate:self];
-    mediaPicker.allowsEditing = YES;
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                                 delegate:self
-                                                        cancelButtonTitle:@"Cancel"
-                                                   destructiveButtonTitle:nil
-                                                        otherButtonTitles:@"Take photo", @"Choose Existing", nil];
-        [actionSheet showInView:self.view];
-    } else {
-        mediaPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        [self presentModalViewController:mediaPicker animated:YES];
-    }
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        mediaPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        [self presentViewController:mediaPicker animated:YES completion:nil];//
-        
-    } else if (buttonIndex == 1) {
-        mediaPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    
-    [self presentModalViewController:mediaPicker animated:YES];
-    // [actionSheet release];
-}
-
-
-
-
-- (void)imagePickerController:(UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    [self recognizeImageWithTesseract:image];
-}
-
-
-
 
 -(void)recognizeImageWithTesseract:(UIImage *)image
 {
@@ -94,7 +34,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [self.activityIndicator startAnimating];
     
     // Display the preprocessed image to be recognized in the view
-    self.imageToRecognize.image = bwImage;
+    self.imageView.image = bwImage;
     
     // Create a new `G8RecognitionOperation` to perform the OCR asynchronously
     // It is assumed that there is a .traineddata file for the language pack
@@ -157,4 +97,52 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [self.operationQueue addOperation:operation];
 }
 
+/**
+ *  This function is part of Tesseract's delegate. It will be called
+ *  periodically as the recognition happens so you can observe the progress.
+ *
+ *  @param tesseract The `G8Tesseract` object performing the recognition.
+ */
+- (void)progressImageRecognitionForTesseract:(G8Tesseract *)tesseract {
+    NSLog(@"progress: %lu", (unsigned long)tesseract.progress);
+}
+
+/**
+ *  This function is part of Tesseract's delegate. It will be called
+ *  periodically as the recognition happens so you can cancel the recogntion
+ *  prematurely if necessary.
+ *
+ *  @param tesseract The `G8Tesseract` object performing the recognition.
+ *
+ *  @return Whether or not to cancel the recognition.
+ */
+- (BOOL)shouldCancelImageRecognitionForTesseract:(G8Tesseract *)tesseract {
+    return NO;  // return YES, if you need to cancel recognition prematurely
+}
+
+//- (IBAction)openCamera:(id)sender
+- (IBAction)AddNew:(id)sender
+{
+    UIImagePickerController *imgPicker = [UIImagePickerController new];
+    imgPicker.delegate = self;
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        imgPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:imgPicker animated:YES completion:nil];
+    }
+}
+
+
+
+
+#pragma mark - UIImagePickerController Delegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    [self recognizeImageWithTesseract:image];
+}
 @end

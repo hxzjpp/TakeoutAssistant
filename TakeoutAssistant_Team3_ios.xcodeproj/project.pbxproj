@@ -15,6 +15,12 @@
 		3F5209671B681680004E56E3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5209651B681680004E56E3 /* LaunchScreen.xib */; };
 		3F5209731B681681004E56E3 /* TakeoutAssistant_Team3_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5209721B681681004E56E3 /* TakeoutAssistant_Team3_iosTests.m */; };
 		3F52097D1B681AA2004E56E3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F52097C1B681AA2004E56E3 /* libz.dylib */; };
+		3F5CDB3E1B6841D800FCEB1E /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 3F5CDB3D1B6841D800FCEB1E /* tessdata */; };
+		3F5CDB401B68519A00FCEB1E /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5CDB3F1B68519A00FCEB1E /* CoreImage.framework */; };
+		3F5CDB421B6851A200FCEB1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5CDB411B6851A200FCEB1E /* Foundation.framework */; };
+		3F5CDB441B6851AB00FCEB1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5CDB431B6851AB00FCEB1E /* CoreGraphics.framework */; };
+		3F5CDB461B6851B100FCEB1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5CDB451B6851B100FCEB1E /* UIKit.framework */; };
+		3F5CDB481B6851C200FCEB1E /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5CDB471B6851C200FCEB1E /* libstdc++.6.0.9.dylib */; };
 		AEC5DC4C4978C10CAC498649 /* libPods-TakeoutAssistant_Team3_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 728163C4945B06C91713698D /* libPods-TakeoutAssistant_Team3_ios.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +50,12 @@
 		3F5209711B681681004E56E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F5209721B681681004E56E3 /* TakeoutAssistant_Team3_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TakeoutAssistant_Team3_iosTests.m; sourceTree = "<group>"; };
 		3F52097C1B681AA2004E56E3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		3F5CDB3D1B6841D800FCEB1E /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = "../../Tesseract-OCR-iOS-master/Template Framework Project/Template Framework Project/tessdata"; sourceTree = "<group>"; };
+		3F5CDB3F1B68519A00FCEB1E /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		3F5CDB411B6851A200FCEB1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3F5CDB431B6851AB00FCEB1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3F5CDB451B6851B100FCEB1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3F5CDB471B6851C200FCEB1E /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
 		728163C4945B06C91713698D /* libPods-TakeoutAssistant_Team3_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TakeoutAssistant_Team3_ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9A16BB53F9BCD80A53ABEC0 /* Pods-TakeoutAssistant_Team3_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeoutAssistant_Team3_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakeoutAssistant_Team3_ios/Pods-TakeoutAssistant_Team3_ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +65,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5CDB481B6851C200FCEB1E /* libstdc++.6.0.9.dylib in Frameworks */,
+				3F5CDB461B6851B100FCEB1E /* UIKit.framework in Frameworks */,
+				3F5CDB441B6851AB00FCEB1E /* CoreGraphics.framework in Frameworks */,
+				3F5CDB421B6851A200FCEB1E /* Foundation.framework in Frameworks */,
+				3F5CDB401B68519A00FCEB1E /* CoreImage.framework in Frameworks */,
 				3F52097D1B681AA2004E56E3 /* libz.dylib in Frameworks */,
 				AEC5DC4C4978C10CAC498649 /* libPods-TakeoutAssistant_Team3_ios.a in Frameworks */,
 			);
@@ -91,6 +108,7 @@
 		3F5209551B681680004E56E3 /* TakeoutAssistant_Team3_ios */ = {
 			isa = PBXGroup;
 			children = (
+				3F5CDB3D1B6841D800FCEB1E /* tessdata */,
 				3F52095A1B681680004E56E3 /* AppDelegate.h */,
 				3F52095B1B681680004E56E3 /* AppDelegate.m */,
 				3F52095D1B681680004E56E3 /* ViewController.h */,
@@ -132,6 +150,11 @@
 		B1E8F39DA1B2F0CD1CC216AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F5CDB471B6851C200FCEB1E /* libstdc++.6.0.9.dylib */,
+				3F5CDB451B6851B100FCEB1E /* UIKit.framework */,
+				3F5CDB431B6851AB00FCEB1E /* CoreGraphics.framework */,
+				3F5CDB411B6851A200FCEB1E /* Foundation.framework */,
+				3F5CDB3F1B68519A00FCEB1E /* CoreImage.framework */,
 				3F52097C1B681AA2004E56E3 /* libz.dylib */,
 				728163C4945B06C91713698D /* libPods-TakeoutAssistant_Team3_ios.a */,
 			);
@@ -230,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F5209621B681680004E56E3 /* Main.storyboard in Resources */,
+				3F5CDB3E1B6841D800FCEB1E /* tessdata in Resources */,
 				3F5209671B681680004E56E3 /* LaunchScreen.xib in Resources */,
 				3F5209641B681680004E56E3 /* Images.xcassets in Resources */,
 			);
@@ -413,8 +437,16 @@
 			baseConfigurationReference = 15AC9B230948A2A05DB585EC /* Pods-TakeoutAssistant_Team3_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TakeoutAssistant_Team3_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -424,8 +456,16 @@
 			baseConfigurationReference = B9A16BB53F9BCD80A53ABEC0 /* Pods-TakeoutAssistant_Team3_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TakeoutAssistant_Team3_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

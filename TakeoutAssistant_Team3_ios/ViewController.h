@@ -13,9 +13,12 @@
 UIImagePickerControllerDelegate,
 UINavigationControllerDelegate> {
     UIImagePickerController *mediaPicker;
+
 }
 @property (nonatomic, retain) IBOutlet UIButton *chooseButton;
-@property (weak, nonatomic) IBOutlet UIImageView *imageToRecognize;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 - (IBAction)AddNew:(id)sender;
 
